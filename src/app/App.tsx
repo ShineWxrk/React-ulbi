@@ -9,6 +9,7 @@ import { useTheme } from './providers/ThemeProvider'
 import { AboutPage } from 'pages/AboutPage'
 import { MainPage } from 'pages/MainPage'
 import { AppRouter } from './providers/router'
+import { Navbar } from 'widgets/Navbar'
 
 
 
@@ -18,8 +19,8 @@ const App = () => {
   return (
     <div className={classNames('app', {hovered: true, selected: false}, [theme])}>
       <button onClick={toogleTheme}>TOOGLE</button>
-      <Link to={'/'}>Главная</Link>
-      <Link to={'/about'}>О сайте</Link>
+      
+      <Navbar />
       <AppRouter />
     </div> 
   )
