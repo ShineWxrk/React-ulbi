@@ -8,7 +8,6 @@ export const MainPage = () => {
   
   return (
     <div>
-      {t('Супер пупер перевод')}
       {t('Главная страница')}
     </div>
   )
