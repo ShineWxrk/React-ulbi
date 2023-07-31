@@ -3,46 +3,25 @@
  * https://jestjs.io/docs/configuration
  */
 
-import path from "path";
+import path from 'path'
 
 export default {
-  // All imported modules in your tests should be mocked automatically
-  // automock: false,
+  globals: {
+    __IS_DEV__: true,
+  },
 
-  // Stop running tests after `n` failures
-  // bail: 0,
-
-  // The directory where Jest should store its cached dependency information
-  // cacheDirectory: "C:\\Users\\Shine\\AppData\\Local\\Temp\\jest",
-
-  // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
-  testEnvironment: "jsdom",
-  coveragePathIgnorePatterns: [
-    "\\\\node_modules\\\\"
-  ],
-  moduleDirectories: [
-    "node_modules"
-  ],
-  modulePaths: [
-    '<rootDir>src'
-  ],
-  moduleFileExtensions: [
-    "js",
-    "jsx",
-    "ts",
-    "tsx",
-    "json",
-    "node"
-  ],
+  testEnvironment: 'jsdom',
+  coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
+  moduleDirectories: ['node_modules'],
+  modulePaths: ['<rootDir>src'],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
   rootDir: '../../',
   setupFilesAfterEnv: ['<rootDir>config/jest/setupTest.ts'],
-  testMatch: [
-    `<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)`,
-  ],
+  testMatch: [`<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)`],
   moduleNameMapper: {
     '\\.(s?css)$': 'identity-obj-proxy',
-    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
 
   // Indicates whether the coverage information should be collected while executing the test
@@ -83,9 +62,6 @@ export default {
   // A path to a module which exports an async function that is triggered once after all test suites
   // globalTeardown: undefined,
 
-  // A set of global variables that need to be available in all test environments
-  // globals: {},
-
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",
 
@@ -123,7 +99,6 @@ export default {
   // restoreMocks: false,
 
   // The root directory that Jest should scan for tests and modules within
- 
 
   // A list of paths to directories that Jest should use to search for files in
   // roots: [
@@ -146,14 +121,12 @@ export default {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
- 
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
 
   // Adds a location field to test results
   // testLocationInResults: false,
-
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
@@ -195,4 +168,4 @@ export default {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+}
